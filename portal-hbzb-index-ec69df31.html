@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>黑白直播 · 站点介绍与使用说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #fdefe6 0%, #fbddc9 50%, #f5cdb5 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            padding: 2rem 1rem;
+            line-height: 1.7;
+            color: #2d2a28;
+        }
+
+        .card {
+            max-width: 860px;
+            width: 100%;
+            background: rgba(255, 250, 245, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 48px 24px 48px 24px;
+            box-shadow: 0 20px 40px -10px rgba(180, 100, 60, 0.18), 0 10px 25px -6px rgba(0,0,0,0.05);
+            padding: 2.5rem 2.2rem;
+            transition: all 0.2s ease;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 2rem 1.2rem;
+                border-radius: 32px 16px 32px 16px;
+            }
+        }
+
+        .hero-icon {
+            display: inline-block;
+            background: #e7c8b0;
+            width: 56px;
+            height: 56px;
+            border-radius: 24px 8px 24px 8px;
+            margin-bottom: 1.2rem;
+            box-shadow: inset 0 0 0 2px rgba(240, 200, 170, 0.6);
+            text-align: center;
+            line-height: 64px;
+            font-size: 1.8rem;
+            color: #6b4a3a;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 520;
+            letter-spacing: 0.02em;
+            color: #3e2e26;
+            margin-bottom: 0.25rem;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #7b5f4e;
+            margin-bottom: 2rem;
+            font-weight: 380;
+            border-left: 4px solid #d6b096;
+            padding-left: 1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 460;
+            margin-top: 2.2rem;
+            margin-bottom: 1rem;
+            color: #4d382c;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2::before {
+            content: "◆";
+            color: #b98b74;
+            font-size: 1rem;
+            margin-right: 0.15rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-weight: 350;
+            text-align: justify;
+        }
+
+        .highlight-block {
+            background: #f7ede5;
+            padding: 1.6rem 1.8rem;
+            border-radius: 28px 8px 28px 8px;
+            margin: 2rem 0 1.5rem;
+            border: 1px solid #e3cfbf;
+        }
+
+        .highlight-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .link-button {
+            display: inline-block;
+            background: #dbb9a4;
+            color: #2d1f18;
+            text-decoration: none;
+            font-weight: 450;
+            padding: 0.6rem 1.4rem;
+            border-radius: 60px 16px 60px 16px;
+            transition: all 0.2s ease;
+            box-shadow: 0 3px 8px rgba(130, 80, 50, 0.08);
+            border: 1px solid #e9d2c2;
+        }
+
+        .link-button:hover {
+            background: #c9a68e;
+            box-shadow: 0 6px 14px rgba(140, 80, 50, 0.15);
+            transform: translateY(-1px);
+            border-color: #b48b73;
+        }
+
+        .faq-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.6rem 0 0.8rem;
+        }
+
+        .faq-item {
+            background: #fbf3ed;
+            flex: 1 1 200px;
+            padding: 1.2rem 1rem;
+            border-radius: 24px 8px 24px 8px;
+            border: 1px solid #eedccc;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #4d3529;
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-item span {
+            font-size: 0.95rem;
+            color: #5e473a;
+        }
+
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.5rem;
+            border-top: 2px dashed #dcc9bb;
+            font-size: 0.95rem;
+            color: #6b5546;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .faq-item {
+                flex: 1 1 100%;
+            }
+        }
+
+        a {
+            color: #6f4c38;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #c6a48c;
+            transition: color 0.1s;
+        }
+
+        a:hover {
+            color: #3d281d;
+        }
+
+        .sentence-link {
+            display: inline;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
+            font-weight: 400;
+        }
+
+        .sentence-link:hover {
+            background: transparent;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .inline-btn {
+            background: #e1c7b6;
+            border-radius: 40px 12px 40px 12px;
+            padding: 0.15rem 0.8rem;
+            text-decoration: none;
+            font-weight: 440;
+            border: 1px solid #dbbaa5;
+            transition: 0.15s;
+        }
+
+        .inline-btn:hover {
+            background: #cfb09b;
+            border-color: #bb9882;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="hero-icon">◉</div>
+        <h1>黑白直播·站点简述</h1>
+        <div class="subhead">一次平实的信息聚合尝试，围绕内容与体验展开</div>
+
+        <p>
+            很多人第一次遇见「黑白直播」这个名字，会以为它只与某种视觉风格有关。实际上，它是面向体育赛事观赛需求而搭建的一个导航与信息整理站点。站内汇集了比较丰富的赛事链接与资源索引，方便使用者快速定位自己关心的比赛或节目。站点没有复杂的装饰，整体追求直接、清爽的浏览感受，这也是它取名时想要传达的克制感。
+        </p>
+
+        <div class="highlight-block">
+            <p><strong>关于使用前的一点说明</strong> —— <a href="https://portal-hbzb.com" class="link-button">黑白直播</a> 本身并不存储或转播任何受版权保护的信号源，而是以信息整合与导航的形式，为用户提供指向公开可用资源的路径。所有内容的最终合规性取决于具体来源。建议使用者在浏览时了解当地相关法规，并自行做出判断。我们始终倡导尊重知识产权，支持正版内容。</p>
+        </div>
+
+        <h2>亮点与习惯</h2>
+        <p>
+            站点内收录了多个主流赛事的入口，并按比赛类型、联赛周期做了简单的归类。页面结构比较轻量，打开后基本不需要等待加载，即使网络环境一般也能快速列出关键链接。同时，站点没有植入弹窗或强制跳转，浏览体验相对干净。如果你平时需要同时关注篮球、足球或电竞的实时动态，可以把它当作一个索引工具来使用。
+        </p>
+        <p>
+            值得一提的还有页面的适配处理——在手机与平板上的阅读感受与桌面端差别不大，按钮和列表都保留了合适的间距。对于经常在路上看比赛的人来说，这一点或许会省去一些缩放和点错的麻烦。
+        </p>
+
+        <h2>适用场景参考</h2>
+        <p>
+            · 想在比赛开始前快速找到可用的观看入口，而不是在搜索引擎里逐个试探。<br>
+            · 希望有一个比较固定的起点，每天打开后能看见当天的重点赛事推荐，不用自己再去翻赛程。<br>
+            · 与朋友讨论比赛时，需要分享一个简洁的链接，对方打开后可以直接看到相关内容列表。<br>
+            · 对直播源稳定性要求不那么苛刻，但希望候选尽量多一些，方便备选切换。
+        </p>
+
+        <h2>常见疑问摘要</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <strong>需要注册吗？</strong>
+                <span>完全不需要。站点本身不设账户体系，直接打开即可浏览所有索引内容。</span>
+            </div>
+            <div class="faq-item">
+                <strong>手机能用吗？</strong>
+                <span>当然可以。页面针对移动设备做了适配，横竖屏均可正常使用。</span>
+            </div>
+            <div class="faq-item">
+                <strong>链接失效怎么办？</strong>
+                <span>站内链接会不定期更新维护。如果发现某个入口无法使用，通常会在一两天内替换或修复。</span>
+            </div>
+            <div class="faq-item">
+                <strong>是否收费？</strong>
+                <span>这是一个免费站点，没有隐藏付费功能或会员体系，请放心使用。</span>
+            </div>
+        </div>
+
+        <p style="margin-top: 1.8rem;">
+            如果你想先感受一下站点的布局与分类方式，可以直接前往 <a href="https://portal-hbzb.com" class="inline-btn">黑白直播</a> 浏览。页面上方是导航区，下方按照不同联赛和项目分别列出当前可用的资源。初次访问时也许会看到一条简短的欢迎提示，关掉后就能正常使用了。
+        </p>
+
+        <div class="footer-note">
+            <span>黑白直播 · portal-hbzb.com</span>
+            <span style="opacity: 0.6;">温和 · 信息聚合 · 正版为先</span>
+        </div>
+    </div>
+</body>
+</html>
